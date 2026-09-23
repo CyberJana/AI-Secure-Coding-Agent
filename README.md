@@ -1,221 +1,179 @@
 🛡️ SecureCode AI
 
-AI-Powered Application Security & Secure Coding Platform
+<p align="center">
+  <img src="docs/assets/securecode-ai.gif" alt="SecureCode AI Animation" width="900"/>
+</p><h3 align="center">
+  🤖 AI-Powered Application Security & DevSecOps Platform
+</h3><p align="center">
+  Detect • Analyze • Prioritize • Remediate • Secure
+</p><p align="center">"Python" (https://img.shields.io/badge/Python-3.12-blue?logo=python)
+"FastAPI" (https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi)
+"Next.js" (https://img.shields.io/badge/Next.js-Frontend-black?logo=next.js)
+"Docker" (https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)
+"PostgreSQL" (https://img.shields.io/badge/PostgreSQL-Database-4169E1?logo=postgresql)
+"Security" (https://img.shields.io/badge/Focus-Cybersecurity-red)
+"AI" (https://img.shields.io/badge/AI-Security-purple)
 
-SecureCode AI is an open-source cybersecurity platform designed to help developers identify, understand, prioritize, and remediate security vulnerabilities in their source code.
+</p>---
 
-It combines SAST, secret detection, dependency scanning, AI-assisted vulnerability analysis, CWE/OWASP mapping, and security reporting into a single developer-friendly platform.
+⚡ What is SecureCode AI?
 
----
+SecureCode AI is an open-source application security platform that combines traditional security scanners with AI-assisted vulnerability analysis.
 
-🚀 Features
-
-- 🔍 Static Application Security Testing (SAST)
-- 🤖 AI-powered vulnerability analysis
-- 🔐 Secret and credential detection
-- 📦 Dependency vulnerability scanning
-- 🐍 Python security analysis with Bandit
-- 🧩 CWE classification
-- 🛡️ OWASP vulnerability mapping
-- 📊 Security risk scoring
-- 📈 Security dashboard
-- 📝 Automated vulnerability explanations
-- 💡 AI-generated remediation recommendations
-- 🐙 GitHub repository integration
-- 🔄 CI/CD security scanning
-- 📄 Security report generation
-- 🐳 Docker-based deployment
-- 🔌 Provider-agnostic LLM architecture
-
----
-
-🏗️ Architecture
-
-                         ┌──────────────────────┐
-                         │   GitHub Repository  │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-                         ┌──────────────────────┐
-                         │    SecureCode AI     │
-                         └──────────┬───────────┘
-                                    │
-                ┌───────────────────┼───────────────────┐
-                │                   │                   │
-                ▼                   ▼                   ▼
-          ┌──────────┐        ┌──────────┐       ┌──────────┐
-          │ Semgrep  │        │ Gitleaks │       │  Trivy   │
-          └────┬─────┘        └────┬─────┘       └────┬─────┘
-               │                   │                  │
-               └───────────────────┼──────────────────┘
-                                   ▼
-                         ┌──────────────────────┐
-                         │ Vulnerability Engine │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-                         ┌──────────────────────┐
-                         │     Risk Engine      │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-                         ┌──────────────────────┐
-                         │    AI Analyzer       │
-                         └──────────┬───────────┘
-                                    │
-                     ┌──────────────┼──────────────┐
-                     ▼              ▼              ▼
-                Explanation      CWE/OWASP     Remediation
-                     │              │              │
-                     └──────────────┼──────────────┘
-                                    ▼
-                         ┌──────────────────────┐
-                         │ Security Dashboard   │
-                         └──────────────────────┘
+        👨‍💻 Developer
+             │
+             ▼
+       🐙 GitHub Code
+             │
+             ▼
+      ┌──────────────┐
+      │ SecureCode AI│
+      └──────┬───────┘
+             │
+      ┌──────┼───────┐
+      ▼      ▼       ▼
+   🔍 SAST  🔐 Secrets  📦 Dependencies
+      │      │       │
+      └──────┼───────┘
+             ▼
+       🧠 AI Analysis
+             │
+      ┌──────┼───────┐
+      ▼      ▼       ▼
+   🎯 Risk  CWE    OWASP
+   Score   Map     Map
+      │      │       │
+      └──────┼───────┘
+             ▼
+       💡 Remediation
+             │
+             ▼
+       🔀 Pull Request
+             │
+             ▼
+        🚀 Secure Code
 
 ---
 
-🧠 AI Architecture
+🧠 AI Security Engine
 
-SecureCode AI uses a provider-agnostic AI abstraction.
+SecureCode AI uses a provider-agnostic architecture.
 
-                    LLM Provider Interface
-                             │
-          ┌──────────────────┼──────────────────┐
-          │                  │                  │
-          ▼                  ▼                  ▼
-    Mock Provider       OpenAI Provider   Anthropic Provider
-          │                  │                  │
-          └──────────────────┼──────────────────┘
-                             │
-                             ▼
-                       AI Analyzer
+                 🧠 AI ENGINE
+                      │
+        ┌─────────────┼─────────────┐
+        ▼             ▼             ▼
+   🤖 Mock AI      OpenAI       Anthropic
+        │             │             │
+        └─────────────┼─────────────┘
+                      ▼
+                AI Analyzer
+                      │
+        ┌─────────────┼─────────────┐
+        ▼             ▼             ▼
+   Explanation    Risk Analysis   Remediation
 
-The Mock Provider is the default, allowing the project to run without an external AI API key.
-
-Future providers can be added without changing the application's core security logic.
-
----
-
-🛠️ Technology Stack
-
-Frontend
-
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-
-Backend
-
-- Python
-- FastAPI
-- Pydantic
-- SQLAlchemy
-
-Security
-
-- Semgrep
-- Gitleaks
-- Trivy
-- Bandit
-
-AI
-
-- Provider-agnostic LLM interface
-- Mock AI provider
-- OpenAI-compatible provider
-- Anthropic-compatible provider
-- Local-model support planned
-
-Database
-
-- PostgreSQL
-
-DevOps
-
-- Docker
-- Docker Compose
-- GitHub Actions
+The default development provider is Mock AI, so the project can run without an external AI API key.
 
 ---
 
-📂 Project Structure
+🔍 Security Scanning
 
-securecode-ai/
-│
-├── frontend/
-│   ├── app/
-│   ├── components/
-│   └── lib/
-│
-├── backend/
-│   ├── app/
-│   │   ├── api/
-│   │   ├── ai/
-│   │   ├── database/
-│   │   ├── github/
-│   │   ├── models/
-│   │   ├── scanners/
-│   │   ├── security/
-│   │   └── services/
-│   │
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── database/
-│   └── schema.sql
-│
-├── scanners/
-│   ├── semgrep/
-│   ├── gitleaks/
-│   └── trivy/
-│
-├── tests/
-│
-├── .github/
-│   └── workflows/
-│
-├── docs/
-│   ├── architecture.md
-│   ├── api.md
-│   ├── security.md
-│   └── deployment.md
-│
-├── docker-compose.yml
-├── .env.example
-├── .gitignore
-└── README.md
+Tool| Purpose
+🔎 Semgrep| Static security analysis
+🔐 Gitleaks| Secret detection
+📦 Trivy| Dependency/container scanning
+🐍 Bandit| Python security analysis
 
 ---
 
-⚙️ Getting Started
+🎯 Vulnerability Intelligence
 
-1. Clone the repository
+SecureCode AI transforms raw scanner findings into structured security intelligence.
+
+Vulnerability
+      ↓
+Severity
+      ↓
+Risk Score
+      ↓
+CWE
+      ↓
+OWASP
+      ↓
+AI Explanation
+      ↓
+Remediation
+
+---
+
+📊 Security Dashboard
+
+The platform will provide:
+
+- 🔴 Critical vulnerabilities
+- 🟠 High vulnerabilities
+- 🟡 Medium vulnerabilities
+- 🟢 Low vulnerabilities
+- 📈 Security trends
+- 📋 Scan history
+- 🎯 Risk distribution
+- 🧩 CWE analysis
+- 🛡️ OWASP analysis
+
+---
+
+🚀 Roadmap
+
+MVP
+ │
+ ├── ✅ FastAPI
+ ├── ✅ Mock AI
+ ├── ✅ Bandit
+ ├── ✅ Risk Engine
+ ├── ✅ CWE Mapping
+ └── ✅ OWASP Mapping
+        │
+        ▼
+Security Platform
+ │
+ ├── 🔲 Semgrep
+ ├── 🔲 Gitleaks
+ ├── 🔲 Trivy
+ ├── 🔲 GitHub Integration
+ └── 🔲 PostgreSQL
+        │
+        ▼
+AI DevSecOps
+ │
+ ├── 🔲 AI Vulnerability Triage
+ ├── 🔲 AI Remediation
+ ├── 🔲 GitHub PR Comments
+ ├── 🔲 CI/CD Security Gates
+ └── 🔲 Automated Validation
+        │
+        ▼
+Future
+ │
+ ├── 🔲 Attack Path Analysis
+ ├── 🔲 Threat Intelligence
+ ├── 🔲 AI Security Agent
+ ├── 🔲 Autonomous Investigation
+ └── 🔲 Enterprise Security
+
+---
+
+🐳 Quick Start
 
 git clone https://github.com/CyberJana/securecode-ai.git
 
 cd securecode-ai
 
-2. Configure environment variables
-
 cp .env.example .env
-
-For the initial development version, keep:
-
-LLM_PROVIDER=mock
-
-No external LLM API key is required when using the mock provider.
-
----
-
-🐳 Run with Docker
-
-Start the application:
 
 docker compose up --build
 
-The backend will be available at:
+Backend:
 
 http://localhost:8000
 
@@ -223,291 +181,75 @@ API documentation:
 
 http://localhost:8000/docs
 
-PostgreSQL:
+---
 
-localhost:5432
+🏗️ Architecture
+
+┌────────────────────────────────────────────────────┐
+│                  SECURECODE AI                     │
+├────────────────────────────────────────────────────┤
+│                                                    │
+│  GitHub ──► Scanner Layer ──► Risk Engine         │
+│                         │             │             │
+│                         ▼             ▼             │
+│                    Vulnerabilities   CWE/OWASP     │
+│                         │             │             │
+│                         └──────┬──────┘             │
+│                                ▼                    │
+│                         🧠 AI Analyzer              │
+│                                │                    │
+│                    ┌───────────┼───────────┐        │
+│                    ▼           ▼           ▼        │
+│                Explain      Prioritize   Fix        │
+│                    │           │           │        │
+│                    └───────────┼───────────┘        │
+│                                ▼                    │
+│                       Security Dashboard            │
+│                                │                    │
+│                                ▼                    │
+│                         GitHub Pull Request          │
+│                                                    │
+└────────────────────────────────────────────────────┘
 
 ---
 
-🔍 Run a Security Scan
+🔐 Security Philosophy
 
-Example API request:
+«AI assists security professionals — it does not replace security validation.»
 
-curl -X POST \
-  "http://localhost:8000/api/scans/?repository_path=/workspace/project"
+SecureCode AI is designed around:
 
-Example response:
+- 🔒 Secure-by-default architecture
+- 🧪 Automated testing
+- 👨‍💻 Human approval
+- 🔐 Secret protection
+- 🛡️ Least privilege
+- 📋 Auditability
+- 🚫 No unrestricted AI code execution
 
-{
-  "status": "completed",
-  "total_findings": 2,
-  "findings": [
-    {
-      "scanner": "Bandit",
-      "rule_id": "B105",
-      "title": "Possible hardcoded password",
-      "severity": "LOW",
-      "file": "example.py",
-      "line": 12,
-      "risk_score": 2,
-      "cwe": "CWE-798",
-      "owasp": "A07:2025 Authentication Failures"
-    }
-  ]
-}
-
----
-
-🧪 Security Scanners
-
-SecureCode AI is designed around multiple security engines.
-
-Scanner| Purpose
-Semgrep| Source-code security analysis
-Gitleaks| Secret and credential detection
-Trivy| Dependency/container vulnerability scanning
-Bandit| Python security analysis
-
-The results are normalized into a common vulnerability format before being processed by the risk and AI engines.
-
----
-
-🎯 Risk Scoring
-
-SecureCode AI currently uses severity-based scoring:
-
-Severity| Score
-Critical| 10
-High| 8
-Medium| 5
-Low| 2
-Informational| 0
-
-The scoring system is designed to evolve toward contextual risk analysis using factors such as:
-
-- Exploitability
-- Asset criticality
-- Exposure
-- Authentication requirements
-- Vulnerability confidence
-- Threat intelligence
-- Reachability
-
----
-
-🧩 CWE & OWASP Mapping
-
-Security findings are mapped to recognized security classifications.
-
-Examples:
-
-SQL Injection
-    ↓
-CWE-89
-    ↓
-OWASP Injection Category
-
-Command Injection
-    ↓
-CWE-78
-    ↓
-OWASP Injection Category
-
-Mappings will be expanded as additional scanner rules are integrated.
-
----
-
-🤖 AI Vulnerability Analysis
-
-The AI layer converts technical scanner output into developer-friendly information.
-
-Example:
-
-Finding
-   ↓
-AI Analysis
-   ↓
-What is the vulnerability?
-   ↓
-Why is it dangerous?
-   ↓
-What could be affected?
-   ↓
-How should it be fixed?
-
-Example output:
-
-Severity: HIGH
-
-Summary:
-Potential command injection vulnerability detected.
-
-Risk:
-Untrusted input may reach an operating-system command.
-
-Recommendation:
-Use a safe API instead of constructing shell commands
-from untrusted input. Validate and constrain input where
-shell execution is unavoidable.
-
-AI output should be treated as security assistance, not authoritative proof of exploitability. Findings should be validated by appropriate security testing and human review.
-
----
-
-🔐 Security Principles
-
-SecureCode AI follows several security principles:
-
-- Never expose API keys to the frontend.
-- Store secrets in environment variables or a secrets manager.
-- Validate repository inputs.
-- Avoid arbitrary code execution.
-- Sandbox security tooling where appropriate.
-- Validate AI-generated remediation.
-- Use parameterized database queries.
-- Apply authentication and authorization.
-- Log security-sensitive actions.
-- Do not automatically deploy AI-generated patches without validation.
-
----
-
-🧪 Testing
-
-Run backend tests:
-
-pytest
-
-Run frontend checks:
-
-npm run lint
-
-Build the frontend:
-
-npm run build
-
----
-
-🗺️ Roadmap
-
-Phase 1 — MVP
-
-- [x] FastAPI backend
-- [x] Mock AI provider
-- [x] Bandit integration
-- [x] Risk scoring
-- [x] CWE mapping
-- [x] OWASP mapping
-- [ ] PostgreSQL persistence
-- [ ] Frontend dashboard
-
-Phase 2 — Security Platform
-
-- [ ] Semgrep integration
-- [ ] Gitleaks integration
-- [ ] Trivy integration
-- [ ] GitHub repository integration
-- [ ] Scan history
-- [ ] Security reports
-- [ ] Authentication
-
-Phase 3 — AI DevSecOps
-
-- [ ] AI vulnerability triage
-- [ ] AI remediation suggestions
-- [ ] GitHub Pull Request comments
-- [ ] CI/CD security gates
-- [ ] Automated regression testing
-- [ ] Security policy engine
-
-Phase 4 — SaaS
-
-- [ ] Multi-tenant architecture
-- [ ] Organization management
-- [ ] RBAC
-- [ ] Team dashboards
-- [ ] Audit logging
-- [ ] Usage analytics
-- [ ] Billing
-
-Phase 5 — Advanced Security
-
-- [ ] Attack-path analysis
-- [ ] Threat intelligence integration
-- [ ] Reachability analysis
-- [ ] AI security agent
-- [ ] Autonomous security investigation
-- [ ] Enterprise integrations
-
----
-
-🌟 Future Vision
-
-SecureCode AI aims to evolve from a vulnerability scanner into an AI-powered DevSecOps security platform.
-
-Developer
-    ↓
-GitHub
-    ↓
-SecureCode AI
-    ↓
-Detect
-    ↓
-Understand
-    ↓
-Prioritize
-    ↓
-Recommend Fix
-    ↓
-Validate
-    ↓
-Pull Request
-    ↓
-Human Approval
-    ↓
-Secure Deployment
-
-The long-term goal is to help development teams make security part of the software-development lifecycle rather than treating security as a final-stage activity.
+AI-generated remediation should be validated and tested before deployment.
 
 ---
 
 🤝 Contributing
 
-Contributions are welcome.
+Contributions are welcome!
 
-1. Fork the repository.
-2. Create a feature branch.
+git checkout -b feature/your-feature
 
-git checkout -b feature/security-improvement
+git commit -m "feat: add security improvement"
 
-3. Make your changes.
-4. Add or update tests.
-5. Commit your changes.
+git push origin feature/your-feature
 
-git commit -m "feat: improve vulnerability analysis"
-
-6. Push the branch.
-
-git push origin feature/security-improvement
-
-7. Open a Pull Request.
+Then open a Pull Request.
 
 ---
 
-📜 License
+⚠️ Responsible Use
 
-This project is intended to be released under the MIT License.
+Only scan source code and systems that you own or have explicit authorization to test.
 
-See "LICENSE" for details.
-
----
-
-⚠️ Disclaimer
-
-SecureCode AI is a security-development and defensive analysis tool.
-
-Security findings and AI-generated recommendations should be validated by qualified security professionals before being used for production security decisions.
-
-Only scan repositories and systems that you own or have explicit authorization to test.
+SecureCode AI is intended for defensive security, secure software development, and authorized security testing.
 
 ---
 
@@ -517,18 +259,10 @@ Janarthanan A
 
 Cybersecurity | Digital Forensics | AI Security | DevSecOps
 
-GitHub: CyberJana
+<p align="center">🛡️ Secure Code. Secure Systems. Secure Future. 🤖
 
----
+</p>---
 
-⭐ Support the Project
-
-If you find SecureCode AI useful:
-
-- ⭐ Star the repository
-- 🐛 Report security issues responsibly
-- 💡 Suggest improvements
-- 🤝 Contribute
-- 🔀 Submit Pull Requests
-
-Building the future of AI-powered application security. 🛡️🤖
+<p align="center">
+  ⭐ Star the repository if you find the project useful!
+</p>
